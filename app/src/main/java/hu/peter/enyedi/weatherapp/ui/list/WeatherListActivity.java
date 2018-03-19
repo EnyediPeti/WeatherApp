@@ -1,15 +1,26 @@
 package hu.peter.enyedi.weatherapp.ui.list;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import hu.peter.enyedi.weatherapp.R;
+import javax.inject.Inject;
 
-public class WeatherListActivity extends AppCompatActivity implements WeatherListScreen {
+import hu.peter.enyedi.weatherapp.R;
+import hu.peter.enyedi.weatherapp.WeatherApplicationComponent;
+import hu.peter.enyedi.weatherapp.ui.BaseActivity;
+
+public class WeatherListActivity extends BaseActivity implements WeatherListScreen {
+
+    @Inject
+    WeatherListPresenter presenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_weather_list);
+    }
+
+    @Override
+    protected void injectDependencies(WeatherApplicationComponent injector) {
+        injector.inject(this);
     }
 }
