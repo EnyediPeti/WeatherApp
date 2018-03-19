@@ -1,6 +1,6 @@
 package hu.peter.enyedi.weatherapp.ui.newcity;
 
-import hu.peter.enyedi.weatherapp.ui.Presenter;
+import hu.peter.enyedi.weatherapp.TaskPresenter;
 
-public class NewCityPresenter extends Presenter<NewCityScreen> {
+public class NewCityPresenter extends TaskPresenter<NewCityScreen> {
 }

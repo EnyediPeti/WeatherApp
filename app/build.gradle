@@ -41,6 +41,14 @@ dependencies {
     annotationProcessor "com.google.dagger:dagger-compiler:2.11"
     compileOnly 'javax.annotation:jsr250-api:1.0'
 
+    //AxoloTL
+    compile "com.github.AutSoft.AxoloTL:compiler-core:1.0.5"
+    compile "com.github.AutSoft.AxoloTL:tasklib:1.0.5"
+    compile "com.github.AutSoft.AxoloTL:tasklib-core:1.0.5"
+    compile "com.github.AutSoft.AxoloTL:tasklib-stetho:1.0.5"
+    testCompile "com.github.AutSoft.AxoloTL:tasklib-test:1.0.5"
+    annotationProcessor "com.github.AutSoft.AxoloTL:taskcompiler:1.0.5"
+
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
