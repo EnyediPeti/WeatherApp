@@ -1,12 +1,13 @@
 package hu.peter.enyedi.weatherapp.network.model;
 
 import com.google.gson.annotations.SerializedName;
+import com.orm.SugarRecord;
 
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class WeatherForecastList {
+public class WeatherForecastList extends SugarRecord<WeatherForecastList> {
 
     @SerializedName("dt")
     private Long dt = null;
@@ -28,6 +29,20 @@ public class WeatherForecastList {
 
     @SerializedName("dt_txt")
     private Date dtTxt = null;
+
+    public WeatherForecastList() {
+    }
+
+    public WeatherForecastList(Long dt, WeatherForecastListMain main, List<WeatherData> weather, WeatherForecastListClouds clouds, WeatherForecastListWind wind, WeatherForecastListSys sys, Date dtTxt) {
+
+        this.dt = dt;
+        this.main = main;
+        this.weather = weather;
+        this.clouds = clouds;
+        this.wind = wind;
+        this.sys = sys;
+        this.dtTxt = dtTxt;
+    }
 
     public Long getDt() {
         return dt;

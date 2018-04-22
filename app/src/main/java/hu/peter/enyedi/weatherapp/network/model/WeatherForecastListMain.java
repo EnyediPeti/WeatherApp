@@ -1,8 +1,9 @@
 package hu.peter.enyedi.weatherapp.network.model;
 
 import com.google.gson.annotations.SerializedName;
+import com.orm.SugarRecord;
 
-public class WeatherForecastListMain {
+public class WeatherForecastListMain extends SugarRecord<WeatherForecastListMain> {
 
     @SerializedName("temp")
     private Float temp = null;
@@ -27,6 +28,21 @@ public class WeatherForecastListMain {
 
     @SerializedName("temp_max")
     private Float tempMax = null;
+
+    public WeatherForecastListMain() {
+    }
+
+    public WeatherForecastListMain(Float temp, Float tempMin, Float grndLevel, Float tempKf, Float humidity, Float pressure, Float seaLevel, Float tempMax) {
+
+        this.temp = temp;
+        this.tempMin = tempMin;
+        this.grndLevel = grndLevel;
+        this.tempKf = tempKf;
+        this.humidity = humidity;
+        this.pressure = pressure;
+        this.seaLevel = seaLevel;
+        this.tempMax = tempMax;
+    }
 
     public Float getTemp() {
         return temp;

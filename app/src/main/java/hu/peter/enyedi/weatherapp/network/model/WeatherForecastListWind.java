@@ -1,14 +1,24 @@
 package hu.peter.enyedi.weatherapp.network.model;
 
 import com.google.gson.annotations.SerializedName;
+import com.orm.SugarRecord;
 
-public class WeatherForecastListWind {
+public class WeatherForecastListWind extends SugarRecord<WeatherForecastListWind> {
 
     @SerializedName("deg")
     private Float deg = null;
 
     @SerializedName("speed")
     private Float speed = null;
+
+    public WeatherForecastListWind() {
+    }
+
+    public WeatherForecastListWind(Float deg, Float speed) {
+
+        this.deg = deg;
+        this.speed = speed;
+    }
 
     public Float getDeg() {
         return deg;

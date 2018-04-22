@@ -1,11 +1,20 @@
 package hu.peter.enyedi.weatherapp.network.model;
 
 import com.google.gson.annotations.SerializedName;
+import com.orm.SugarRecord;
 
-public class WeatherForecastListSys {
+public class WeatherForecastListSys extends SugarRecord<WeatherForecastListSys> {
 
     @SerializedName("pod")
     private String pod = null;
+
+    public WeatherForecastListSys() {
+    }
+
+    public WeatherForecastListSys(String pod) {
+
+        this.pod = pod;
+    }
 
     public String getPod() {
         return pod;
