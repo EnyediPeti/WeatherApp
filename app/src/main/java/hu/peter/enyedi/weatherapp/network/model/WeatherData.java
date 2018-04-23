@@ -1,8 +1,9 @@
 package hu.peter.enyedi.weatherapp.network.model;
 
 import com.google.gson.annotations.SerializedName;
+import com.orm.SugarRecord;
 
-public class WeatherData {
+public class WeatherData extends SugarRecord<WeatherData> {
 
     @SerializedName("id")
     private Integer id = null;
@@ -16,7 +17,18 @@ public class WeatherData {
     @SerializedName("icon")
     private String icon = null;
 
-    public Integer getId() {
+    public WeatherData() {
+    }
+
+    public WeatherData(Integer id, String main, String description, String icon) {
+
+        this.id = id;
+        this.main = main;
+        this.description = description;
+        this.icon = icon;
+    }
+
+    public Integer getWeatherDataId() {
         return id;
     }
 

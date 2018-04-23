@@ -1,8 +1,19 @@
 package hu.peter.enyedi.weatherapp.network.model;
 
 import com.google.gson.annotations.SerializedName;
+import com.orm.SugarRecord;
 
-public class WeatherCity {
+public class WeatherCity extends SugarRecord<WeatherCity> {
+    public WeatherCity() {
+    }
+
+    public WeatherCity(String country, WeatherCityCoord coord, String name, Long id) {
+
+        this.country = country;
+        this.coord = coord;
+        this.name = name;
+        this.id = id;
+    }
 
     @SerializedName("country")
     private String country = null;

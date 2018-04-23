@@ -1,13 +1,27 @@
 package hu.peter.enyedi.weatherapp.network.model;
 
 import com.google.gson.annotations.SerializedName;
+import com.orm.SugarRecord;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Weather {
+public class Weather extends SugarRecord<Weather> {
+
+    public Weather() {
+
+    }
+
+    public Weather(String code, Integer message, WeatherCity city, Integer cnt, List<WeatherForecastList> list) {
+        this.code = code;
+        this.message = message;
+        this.city = city;
+        this.cnt = cnt;
+        this.list = list;
+    }
 
     @SerializedName("code")
+
     private String code = null;
 
     @SerializedName("message")
