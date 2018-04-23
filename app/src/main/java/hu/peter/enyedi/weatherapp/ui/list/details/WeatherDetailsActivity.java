@@ -11,5 +11,7 @@ public class WeatherDetailsActivity extends AppCompatActivity implements Weather
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_weather_details);
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 }
