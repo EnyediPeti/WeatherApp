@@ -1,6 +1,7 @@
 package hu.peter.enyedi.weatherapp.ui.list;
 
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
 import javax.inject.Inject;
@@ -19,6 +20,8 @@ public class WeatherListActivity extends BaseActivity implements WeatherListScre
     @Inject
     WeatherListPresenter presenter;
 
+    WeatherListAdapter adapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,8 +32,16 @@ public class WeatherListActivity extends BaseActivity implements WeatherListScre
         setupRecyclerView();
     }
 
-    private void setupRecyclerView() {
+    @Override
+    protected void onResume() {
+        super.onResume();
+        presenter.getForecastList();
+    }
 
+    private void setupRecyclerView() {
+        adapter = new WeatherListAdapter(this);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setAdapter(adapter);
     }
 
     @Override

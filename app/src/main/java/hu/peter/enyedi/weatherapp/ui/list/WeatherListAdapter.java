@@ -15,11 +15,11 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import hu.peter.enyedi.weatherapp.R;
-import hu.peter.enyedi.weatherapp.network.model.Weather;
+import hu.peter.enyedi.weatherapp.network.model.WeatherForecastList;
 
 public class WeatherListAdapter extends RecyclerView.Adapter<WeatherListAdapter.ViewHolder> {
 
-    private List<Weather> weatherList;
+    private List<WeatherForecastList> weatherList;
     private WeatherClickListener listener;
 
     public WeatherListAdapter(WeatherClickListener listener) {
@@ -36,7 +36,7 @@ public class WeatherListAdapter extends RecyclerView.Adapter<WeatherListAdapter.
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        Weather weather = weatherList.get(position);
+        WeatherForecastList weather = weatherList.get(position);
     }
 
     @Override

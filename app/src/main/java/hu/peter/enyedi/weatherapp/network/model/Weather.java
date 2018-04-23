@@ -8,6 +8,17 @@ import java.util.List;
 
 public class Weather extends SugarRecord<Weather> {
 
+    @SerializedName("cod")
+    private String code = null;
+    @SerializedName("message")
+    private Integer message = null;
+    @SerializedName("city")
+    private WeatherCity city = null;
+    @SerializedName("cnt")
+    private Integer cnt = null;
+    @SerializedName("list")
+    private List<WeatherForecastList> list = new ArrayList<WeatherForecastList>();
+
     public Weather() {
 
     }
@@ -19,23 +30,6 @@ public class Weather extends SugarRecord<Weather> {
         this.cnt = cnt;
         this.list = list;
     }
-
-    @SerializedName("code")
-
-    private String code = null;
-
-    @SerializedName("message")
-    private Integer message = null;
-
-    @SerializedName("city")
-    private WeatherCity city = null;
-
-    @SerializedName("cnt")
-    private Integer cnt = null;
-
-    @SerializedName("list")
-    private List<WeatherForecastList> list = new ArrayList<WeatherForecastList>();
-
 
     public String getCode() {
         return code;

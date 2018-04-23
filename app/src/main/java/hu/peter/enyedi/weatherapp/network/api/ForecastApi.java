@@ -2,7 +2,6 @@ package hu.peter.enyedi.weatherapp.network.api;
 
 import hu.peter.enyedi.weatherapp.network.model.City;
 import hu.peter.enyedi.weatherapp.network.model.Weather;
-import hu.peter.enyedi.weatherapp.network.model.WeatherList;
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.DELETE;
@@ -23,7 +22,7 @@ public interface ForecastApi {
      */
 
     @GET("")
-    Call<WeatherList> getForecast(
+    Call<Weather> getForecast(
             @Query("q") String q, @Query("appid") String appid
     );
 
