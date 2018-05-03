@@ -35,7 +35,7 @@ public class WeatherListActivity extends BaseActivity implements WeatherListScre
     @Override
     protected void onResume() {
         super.onResume();
-        presenter.getForecastList();
+        presenter.getForecastList("Budapest");
     }
 
     private void setupRecyclerView() {

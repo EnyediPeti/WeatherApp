@@ -1,5 +1,7 @@
 package hu.peter.enyedi.weatherapp.repository;
 
+import javax.inject.Singleton;
+
 import dagger.Binds;
 import dagger.Module;
 
@@ -7,5 +9,6 @@ import dagger.Module;
 public abstract class RepositoryModule {
 
     @Binds
+    @Singleton
     abstract Repository provideRepository(final SugarRepository sugarRepository);
 }

@@ -22,9 +22,7 @@ public interface ForecastApi {
      */
 
     @GET("")
-    Call<Weather> getForecast(
-            @Query("q") String q, @Query("appid") String appid
-    );
+    Call<Weather> getForecast(@Query("q") String q, @Query("appid") String appid);
 
 
     /**
@@ -36,9 +34,7 @@ public interface ForecastApi {
      */
 
     @PUT("")
-    Call<Void> updateForecast(
-            @Query("weatherId") Integer weatherId, @Body Weather body
-    );
+    Call<Void> updateForecast(@Query("weatherId") Integer weatherId, @Body Weather body);
 
 
     /**
@@ -50,9 +46,7 @@ public interface ForecastApi {
      */
 
     @POST("")
-    Call<Void> createCity(
-            @Body City body
-    );
+    Call<Void> createCity(@Body City body);
 
 
     /**
@@ -64,9 +58,7 @@ public interface ForecastApi {
      */
 
     @DELETE("")
-    Call<Void> deleteCity(
-            @Path("cityName") String cityName
-    );
+    Call<Void> deleteCity(@Path("cityName") String cityName);
 
 
 }

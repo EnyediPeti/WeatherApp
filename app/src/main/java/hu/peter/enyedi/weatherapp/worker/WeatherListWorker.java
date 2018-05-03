@@ -12,13 +12,15 @@ public class WeatherListWorker extends BaseWorker {
     @Inject
     ForecastApi forecastApi;
 
-    @Override
-    protected void injectDependencies(WeatherApplicationComponent injector) {
-        injector.inject(this);
-    }
 
     @CreateTask
     public Weather getForecastList(String cityName) {
-        callWithBasicResponseCheckAnd200(forecastApi.getForecast());
+        //callWithBasicResponseCheckAnd200(forecastApi.getForecast());
+        return null;
+    }
+
+    @Override
+    protected void injectDependencies(WeatherApplicationComponent injector) {
+        injector.inject(this);
     }
 }
