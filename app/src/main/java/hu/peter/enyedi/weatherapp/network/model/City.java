@@ -1,10 +1,9 @@
 package hu.peter.enyedi.weatherapp.network.model;
 
 import com.google.gson.annotations.SerializedName;
-import com.orm.SugarRecord;
 
 
-public class City extends SugarRecord<City> {
+public class City {
 
     public City() {
 

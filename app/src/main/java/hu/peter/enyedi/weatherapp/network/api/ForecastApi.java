@@ -21,7 +21,7 @@ public interface ForecastApi {
      * @return Call<WeatherList>
      */
 
-    @GET("")
+    @GET("forecast")
     Call<Weather> getForecast(@Query("q") String q, @Query("appid") String appid);
 
 

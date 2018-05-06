@@ -11,4 +11,6 @@ public interface Repository {
     void saveCity(String cityName);
 
     void deleteCity(String cityName);
+
+    void initRepository();
 }

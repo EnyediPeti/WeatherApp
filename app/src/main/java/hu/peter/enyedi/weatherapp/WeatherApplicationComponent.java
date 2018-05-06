@@ -7,6 +7,7 @@ import javax.inject.Singleton;
 import dagger.BindsInstance;
 import dagger.Component;
 import hu.peter.enyedi.weatherapp.network.NetworkModule;
+import hu.peter.enyedi.weatherapp.repository.RealmRepository;
 import hu.peter.enyedi.weatherapp.repository.RepositoryModule;
 import hu.peter.enyedi.weatherapp.ui.UIModule;
 import hu.peter.enyedi.weatherapp.ui.list.WeatherListActivity;
@@ -26,6 +27,8 @@ public interface WeatherApplicationComponent {
     void inject(WeatherListWorkerTaskHelper weatherListWorkerTaskHelper);
 
     void inject(WeatherListWorker weatherListWorker);
+
+    void inject(RealmRepository realmRepository);
 
     @Component.Builder
     interface Builder {

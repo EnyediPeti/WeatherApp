@@ -1,17 +1,16 @@
 package hu.peter.enyedi.weatherapp.network.model;
 
 import com.google.gson.annotations.SerializedName;
-import com.orm.SugarRecord;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Weather extends SugarRecord<Weather> {
+public class Weather {
 
     @SerializedName("cod")
     private String code = null;
     @SerializedName("message")
-    private Integer message = null;
+    private Double message = null;
     @SerializedName("city")
     private WeatherCity city = null;
     @SerializedName("cnt")
@@ -23,7 +22,7 @@ public class Weather extends SugarRecord<Weather> {
 
     }
 
-    public Weather(String code, Integer message, WeatherCity city, Integer cnt, List<WeatherForecastList> list) {
+    public Weather(String code, Double message, WeatherCity city, Integer cnt, List<WeatherForecastList> list) {
         this.code = code;
         this.message = message;
         this.city = city;
@@ -39,11 +38,11 @@ public class Weather extends SugarRecord<Weather> {
         this.code = code;
     }
 
-    public Integer getMessage() {
+    public Double getMessage() {
         return message;
     }
 
-    public void setMessage(Integer message) {
+    public void setMessage(Double message) {
         this.message = message;
     }
 

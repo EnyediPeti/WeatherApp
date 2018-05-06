@@ -10,6 +10,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import hu.peter.enyedi.weatherapp.R;
 import hu.peter.enyedi.weatherapp.WeatherApplicationComponent;
+import hu.peter.enyedi.weatherapp.network.model.Weather;
 import hu.peter.enyedi.weatherapp.ui.BaseActivity;
 
 public class WeatherListActivity extends BaseActivity implements WeatherListScreen, WeatherClickListener {
@@ -35,7 +36,14 @@ public class WeatherListActivity extends BaseActivity implements WeatherListScre
     @Override
     protected void onResume() {
         super.onResume();
+        presenter.attachScreen(this);
         presenter.getForecastList("Budapest");
+    }
+
+    @Override
+    protected void onPause() {
+        presenter.detachScreen();
+        super.onPause();
     }
 
     private void setupRecyclerView() {
@@ -51,6 +59,11 @@ public class WeatherListActivity extends BaseActivity implements WeatherListScre
 
     @Override
     public void onWeatherItemClicked() {
+
+    }
+
+    @Override
+    public void showForecast(Weather weather) {
 
     }
 }

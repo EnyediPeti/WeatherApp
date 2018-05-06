@@ -1,9 +1,8 @@
 package hu.peter.enyedi.weatherapp.network.model;
 
 import com.google.gson.annotations.SerializedName;
-import com.orm.SugarRecord;
 
-public class WeatherForecastListClouds extends SugarRecord<WeatherForecastListClouds> {
+public class WeatherForecastListClouds {
 
     @SerializedName("all")
     private Integer all = null;

@@ -10,5 +10,5 @@ public abstract class RepositoryModule {
 
     @Binds
     @Singleton
-    abstract Repository provideRepository(final SugarRepository sugarRepository);
+    abstract Repository provideRepository(final RealmRepository realmRepository);
 }

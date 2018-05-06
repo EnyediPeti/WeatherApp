@@ -1,9 +1,9 @@
 package hu.peter.enyedi.weatherapp;
 
+import android.app.Application;
 import android.content.Context;
 
 import com.facebook.stetho.Stetho;
-import com.orm.SugarApp;
 
 import javax.inject.Inject;
 
@@ -11,7 +11,7 @@ import hu.axolotl.tasklib.annotation.Injector;
 import hu.axolotl.tasklib.stetho.TaskLibStetho;
 import hu.peter.enyedi.weatherapp.repository.Repository;
 
-public class WeatherApplication extends SugarApp {
+public class WeatherApplication extends Application {
 
     @Injector
     public static WeatherApplicationComponent injector;
@@ -27,6 +27,7 @@ public class WeatherApplication extends SugarApp {
         injectDependencies(injector);
 
         initApplicationDependentComponents();
+        repository.initRepository();
     }
 
     protected void initApplicationDependentComponents() {

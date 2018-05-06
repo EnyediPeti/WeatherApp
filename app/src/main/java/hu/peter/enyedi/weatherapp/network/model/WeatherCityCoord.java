@@ -1,9 +1,8 @@
 package hu.peter.enyedi.weatherapp.network.model;
 
 import com.google.gson.annotations.SerializedName;
-import com.orm.SugarRecord;
 
-public class WeatherCityCoord extends SugarRecord<WeatherCityCoord> {
+public class WeatherCityCoord {
 
     @SerializedName("lon")
     private Double lon = null;
