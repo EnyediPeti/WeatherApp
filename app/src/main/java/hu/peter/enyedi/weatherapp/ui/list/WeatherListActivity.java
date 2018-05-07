@@ -8,6 +8,10 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 
+import com.crashlytics.android.answers.Answers;
+import com.crashlytics.android.answers.CustomEvent;
+import com.google.android.gms.analytics.HitBuilders;
+import com.google.android.gms.analytics.Tracker;
 import com.google.gson.Gson;
 
 import javax.inject.Inject;
@@ -15,6 +19,7 @@ import javax.inject.Inject;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import hu.peter.enyedi.weatherapp.R;
+import hu.peter.enyedi.weatherapp.WeatherApplication;
 import hu.peter.enyedi.weatherapp.WeatherApplicationComponent;
 import hu.peter.enyedi.weatherapp.network.model.Weather;
 import hu.peter.enyedi.weatherapp.network.model.WeatherForecast;
@@ -41,6 +46,7 @@ public class WeatherListActivity extends BaseActivity implements WeatherListScre
     WeatherListPresenter presenter;
 
     WeatherListAdapter adapter;
+    private Tracker tracker;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,16 +55,25 @@ public class WeatherListActivity extends BaseActivity implements WeatherListScre
 
         ButterKnife.bind(this);
 
-        getSupportActionBar().setTitle(settings.getCurrentCity());
-
         setupRecyclerView();
+
+        WeatherApplication application = (WeatherApplication) getApplication();
+        tracker = application.getDefaultTracker();
     }
 
     @Override
     protected void onResume() {
         super.onResume();
         presenter.attachScreen(this);
+        getSupportActionBar().setTitle(settings.getCurrentCity());
+
+        Answers.getInstance().logCustom(new CustomEvent("City")
+                .putCustomAttribute("Current city", settings.getCurrentCity())
+        );
+
         presenter.getForecastList(settings.getCurrentCity());
+        tracker.setScreenName("Weather list");
+        tracker.send(new HitBuilders.ScreenViewBuilder().build());
     }
 
     @Override
@@ -110,5 +125,10 @@ public class WeatherListActivity extends BaseActivity implements WeatherListScre
     @Override
     public void showForecast(Weather weather) {
         adapter.setWeatherList(weather.getList());
+        Answers.getInstance().logCustom(new CustomEvent("Get forecast list")
+                .putCustomAttribute("Weathet list size", weather.getList().size())
+        );
+
+
     }
 }
