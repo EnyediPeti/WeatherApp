@@ -2,7 +2,7 @@ package hu.peter.enyedi.weatherapp.network.model;
 
 import com.google.gson.annotations.SerializedName;
 
-public class WeatherForecastListWind {
+public class WeatherForecastListWind /*extends RealmObject*/ {
 
     @SerializedName("deg")
     private Float deg = null;

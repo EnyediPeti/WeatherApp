@@ -2,7 +2,7 @@ package hu.peter.enyedi.weatherapp.network.model;
 
 import com.google.gson.annotations.SerializedName;
 
-public class WeatherCityCoord {
+public class WeatherCityCoord /*extends RealmObject*/ {
 
     @SerializedName("lon")
     private Double lon = null;

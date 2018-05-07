@@ -2,7 +2,7 @@ package hu.peter.enyedi.weatherapp.network.model;
 
 import com.google.gson.annotations.SerializedName;
 
-public class WeatherForecastListMain {
+public class WeatherForecastListMain /*extends RealmObject*/ {
 
     @SerializedName("temp")
     private Float temp = null;

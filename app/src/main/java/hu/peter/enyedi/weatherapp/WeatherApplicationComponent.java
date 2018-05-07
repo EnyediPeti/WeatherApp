@@ -11,6 +11,8 @@ import hu.peter.enyedi.weatherapp.repository.RealmRepository;
 import hu.peter.enyedi.weatherapp.repository.RepositoryModule;
 import hu.peter.enyedi.weatherapp.ui.UIModule;
 import hu.peter.enyedi.weatherapp.ui.list.WeatherListActivity;
+import hu.peter.enyedi.weatherapp.ui.list.details.WeatherDetailsActivity;
+import hu.peter.enyedi.weatherapp.ui.newcity.NewCityActivity;
 import hu.peter.enyedi.weatherapp.worker.WeatherListWorker;
 import hu.peter.enyedi.weatherapp.worker.WorkerModule;
 import hu.peter.enyedi.weatherapp.worker.task.WeatherListWorkerTaskHelper;
@@ -29,6 +31,10 @@ public interface WeatherApplicationComponent {
     void inject(WeatherListWorker weatherListWorker);
 
     void inject(RealmRepository realmRepository);
+
+    void inject(WeatherDetailsActivity weatherDetailsActivity);
+
+    void inject(NewCityActivity newCityActivity);
 
     @Component.Builder
     interface Builder {

@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName;
 import java.util.ArrayList;
 import java.util.List;
 
-public class WeatherForecastList {
+public class WeatherForecast /*extends RealmObject*/ {
 
     @SerializedName("dt")
     private Long dt = null;
@@ -28,10 +28,10 @@ public class WeatherForecastList {
     @SerializedName("dt_txt")
     private String dtTxt = null;
 
-    public WeatherForecastList() {
+    public WeatherForecast() {
     }
 
-    public WeatherForecastList(Long dt, WeatherForecastListMain main, List<WeatherData> weather, WeatherForecastListClouds clouds, WeatherForecastListWind wind, WeatherForecastListSys sys, String dtTxt) {
+    public WeatherForecast(Long dt, WeatherForecastListMain main, List<WeatherData> weather, WeatherForecastListClouds clouds, WeatherForecastListWind wind, WeatherForecastListSys sys, String dtTxt) {
 
         this.dt = dt;
         this.main = main;
@@ -102,7 +102,7 @@ public class WeatherForecastList {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class WeatherForecastList {\n");
+        sb.append("class WeatherForecast {\n");
 
         sb.append("    dt: ").append(toIndentedString(dt)).append("\n");
         sb.append("    main: ").append(toIndentedString(main)).append("\n");

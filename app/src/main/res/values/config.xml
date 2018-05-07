@@ -5,5 +5,7 @@
 
     <string name="api_key">923f92d1a644c04b0e9b7f1614d473b9</string>
 
+    <string name="unit_metric">metric</string>
+
     <string name="config_gson_date_format">yyyy-MM-dd\'T\'HH:mm:ss.SSS\'Z\'</string>
 </resources>

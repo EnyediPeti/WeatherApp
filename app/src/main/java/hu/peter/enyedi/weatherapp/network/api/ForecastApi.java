@@ -18,11 +18,11 @@ public interface ForecastApi {
      *
      * @param q     The name of the city that you want the weather forecast of and &#39;,&#39; and the country code of the city
      * @param appid The application id to use the api call
-     * @return Call<WeatherList>
+     * @return Call<Weather>
      */
 
     @GET("forecast")
-    Call<Weather> getForecast(@Query("q") String q, @Query("appid") String appid);
+    Call<Weather> getForecast(@Query("q") String q, @Query("units") String units, @Query("appid") String appid);
 
 
     /**

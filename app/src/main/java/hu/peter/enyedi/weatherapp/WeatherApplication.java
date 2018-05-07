@@ -10,6 +10,7 @@ import javax.inject.Inject;
 import hu.axolotl.tasklib.annotation.Injector;
 import hu.axolotl.tasklib.stetho.TaskLibStetho;
 import hu.peter.enyedi.weatherapp.repository.Repository;
+import hu.peter.enyedi.weatherapp.repository.Settings;
 
 public class WeatherApplication extends Application {
 
@@ -18,6 +19,9 @@ public class WeatherApplication extends Application {
 
     @Inject
     Repository repository;
+
+    @Inject
+    Settings settings;
 
     @Override
     public void onCreate() {
@@ -28,6 +32,7 @@ public class WeatherApplication extends Application {
 
         initApplicationDependentComponents();
         repository.initRepository();
+        settings.initSettings();
     }
 
     protected void initApplicationDependentComponents() {

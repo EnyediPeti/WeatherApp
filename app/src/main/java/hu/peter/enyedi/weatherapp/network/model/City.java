@@ -3,7 +3,7 @@ package hu.peter.enyedi.weatherapp.network.model;
 import com.google.gson.annotations.SerializedName;
 
 
-public class City {
+public class City /*extends RealmObject*/ {
 
     public City() {
 
@@ -17,7 +17,6 @@ public class City {
     }
 
     @SerializedName("id")
-
     private Long id = null;
 
     @SerializedName("name")

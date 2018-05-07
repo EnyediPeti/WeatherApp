@@ -5,11 +5,14 @@ import android.content.Context;
 import javax.inject.Inject;
 
 import hu.peter.enyedi.weatherapp.WeatherApplication;
-import hu.peter.enyedi.weatherapp.network.model.Weather;
+import hu.peter.enyedi.weatherapp.repository.dao.WeatherDao;
 import io.realm.Realm;
 import io.realm.RealmConfiguration;
 
 public class RealmRepository implements Repository {
+
+    @Inject
+    WeatherDao weatherDao;
 
     private Context context;
 
@@ -20,23 +23,8 @@ public class RealmRepository implements Repository {
     }
 
     @Override
-    public void saveForecast(Weather weather) {
-
-    }
-
-    @Override
-    public void updateForecast(Weather newWeather) {
-
-    }
-
-    @Override
-    public void saveCity(String cityName) {
-
-    }
-
-    @Override
-    public void deleteCity(String cityName) {
-
+    public WeatherDao getWeatherDao() {
+        return null;
     }
 
     @Override

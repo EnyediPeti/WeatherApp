@@ -8,4 +8,10 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="DarkDialogEditText" parent="Widget.Design.TextInputLayout">
+        <item name="colorControlNormal">#222222</item>
+        <item name="colorControlActivated">#222222</item>
+        <item name="colorControlHighlight">#222222</item>
+    </style>
+
 </resources>

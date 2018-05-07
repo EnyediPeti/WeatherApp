@@ -2,72 +2,98 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:padding="16dp">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Temperature" />
+        android:text="@string/description"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/detailsDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/temperature"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/detailsTemp"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Minimum temperature" />
+        android:text="@string/minimum_temperature"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/detailsTempMin"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Maximum temperature" />
+        android:text="@string/maximum_temperature"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/detailsTempMax"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Pressure" />
+        android:text="@string/pressure"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/detailsPressure"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Humidity" />
+        android:text="@string/humidity"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/detailsHumidity"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Clouds" />
+        android:text="@string/clouds"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/detailsClouds"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Wind" />
+        android:text="@string/wind"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/detailsWind"

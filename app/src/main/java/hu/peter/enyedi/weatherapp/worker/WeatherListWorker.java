@@ -26,6 +26,6 @@ public class WeatherListWorker extends BaseWorker {
 
     @CreateTask
     public Weather getForecastList(String cityName) {
-        return callWithBasicResponseCheckAnd200(forecastApi.getForecast(cityName, context.getResources().getString(R.string.api_key)));
+        return callWithBasicResponseCheckAnd200(forecastApi.getForecast(cityName, context.getResources().getString(R.string.unit_metric), context.getResources().getString(R.string.api_key)));
     }
 }
