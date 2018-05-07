@@ -1,6 +1,8 @@
 package hu.peter.enyedi.weatherapp.ui.newcity;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -17,7 +19,9 @@ import butterknife.OnClick;
 import hu.peter.enyedi.weatherapp.R;
 import hu.peter.enyedi.weatherapp.WeatherApplication;
 import hu.peter.enyedi.weatherapp.WeatherApplicationComponent;
+import hu.peter.enyedi.weatherapp.repository.Repository;
 import hu.peter.enyedi.weatherapp.repository.Settings;
+import hu.peter.enyedi.weatherapp.repository.model.CityRealm;
 import hu.peter.enyedi.weatherapp.ui.BaseActivity;
 
 public class NewCityActivity extends BaseActivity implements NewCityScreen {
@@ -27,6 +31,9 @@ public class NewCityActivity extends BaseActivity implements NewCityScreen {
 
     @Inject
     Settings settings;
+
+    @Inject
+    Repository repository;
 
     ArrayList<String> listItems = new ArrayList<>();
 
@@ -45,6 +52,15 @@ public class NewCityActivity extends BaseActivity implements NewCityScreen {
                 listItems);
         listView.setAdapter(adapter);
 
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+                String selectedCity = adapter.getItem(position);
+                settings.saveCurrentCity(selectedCity);
+                onBackPressed();
+            }
+        });
+
         WeatherApplication application = (WeatherApplication) getApplication();
         tracker = application.getDefaultTracker();
     }
@@ -52,6 +68,11 @@ public class NewCityActivity extends BaseActivity implements NewCityScreen {
     @Override
     protected void onResume() {
         super.onResume();
+
+        for (CityRealm city : repository.getWeatherDao().getCityList()) {
+            adapter.add(city.getName());
+        }
+
         tracker.setScreenName("City list");
         tracker.send(new HitBuilders.ScreenViewBuilder().build());
     }
@@ -73,6 +94,7 @@ public class NewCityActivity extends BaseActivity implements NewCityScreen {
                 .setAction("New city added")
                 .build());
         settings.saveCurrentCity(cityName);
+        repository.getWeatherDao().saveCity(cityName);
         adapter.add(cityName);
         adapter.notifyDataSetChanged();
     }

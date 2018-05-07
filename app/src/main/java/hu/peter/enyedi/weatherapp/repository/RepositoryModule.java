@@ -19,5 +19,5 @@ public abstract class RepositoryModule {
     abstract Settings provideSettings(final SharedPrefSettings sharedPrefSettings);
 
     @Binds
-    abstract WeatherDao provideTrackPointDao(final WeatherDaoRealm weatherDaoRealm);
+    abstract WeatherDao provideWeatherDao(final WeatherDaoRealm weatherDaoRealm);
 }

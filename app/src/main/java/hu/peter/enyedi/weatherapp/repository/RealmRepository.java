@@ -24,7 +24,7 @@ public class RealmRepository implements Repository {
 
     @Override
     public WeatherDao getWeatherDao() {
-        return null;
+        return weatherDao;
     }
 
     @Override
