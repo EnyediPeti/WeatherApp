@@ -1,14 +1,10 @@
 package hu.peter.enyedi.weatherapp.repository;
 
-import hu.peter.enyedi.weatherapp.network.model.Weather;
+import hu.peter.enyedi.weatherapp.repository.dao.WeatherDao;
 
 public interface Repository {
 
-    void saveForecast(Weather weather);
+    WeatherDao getWeatherDao();
 
-    void updateForecast(Weather newWeather);
-
-    void saveCity(String cityName);
-
-    void deleteCity(String cityName);
+    void initRepository();
 }

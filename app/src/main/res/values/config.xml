@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="config_service_endpoint_address">http://api.openweathermap.org/data/</string>
+    <string name="config_service_endpoint_version">2.5/</string>
+
+    <string name="api_key">923f92d1a644c04b0e9b7f1614d473b9</string>
+
+    <string name="unit_metric">metric</string>
+
+    <string name="config_gson_date_format">yyyy-MM-dd\'T\'HH:mm:ss.SSS\'Z\'</string>
+</resources>

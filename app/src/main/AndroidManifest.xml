@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="hu.peter.enyedi.weatherapp">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:name=".WeatherApplication"
         android:allowBackup="true"
@@ -22,11 +24,6 @@
         <activity android:name=".ui.list.details.WeatherDetailsActivity" />
         <activity android:name=".ui.newcity.NewCityActivity" />
         <activity android:name=".ui.weatherobservation.ObservationActivity" />
-
-        <meta-data android:name="DATABASE" android:value="forecast_database.db" />
-        <meta-data android:name="VERSION" android:value="1" />
-        <meta-data android:name="QUERY_LOG" android:value="true" />
-        <meta-data android:name="DOMAIN_PACKAGE_NAME" android:value="hu.peter.enyedi.weatherapp.network.model" />
 
     </application>
 

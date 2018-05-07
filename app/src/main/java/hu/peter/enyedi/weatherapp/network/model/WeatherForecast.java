@@ -1,13 +1,11 @@
 package hu.peter.enyedi.weatherapp.network.model;
 
 import com.google.gson.annotations.SerializedName;
-import com.orm.SugarRecord;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
-public class WeatherForecastList extends SugarRecord<WeatherForecastList> {
+public class WeatherForecast /*extends RealmObject*/ {
 
     @SerializedName("dt")
     private Long dt = null;
@@ -28,12 +26,12 @@ public class WeatherForecastList extends SugarRecord<WeatherForecastList> {
     private WeatherForecastListSys sys = null;
 
     @SerializedName("dt_txt")
-    private Date dtTxt = null;
+    private String dtTxt = null;
 
-    public WeatherForecastList() {
+    public WeatherForecast() {
     }
 
-    public WeatherForecastList(Long dt, WeatherForecastListMain main, List<WeatherData> weather, WeatherForecastListClouds clouds, WeatherForecastListWind wind, WeatherForecastListSys sys, Date dtTxt) {
+    public WeatherForecast(Long dt, WeatherForecastListMain main, List<WeatherData> weather, WeatherForecastListClouds clouds, WeatherForecastListWind wind, WeatherForecastListSys sys, String dtTxt) {
 
         this.dt = dt;
         this.main = main;
@@ -92,11 +90,11 @@ public class WeatherForecastList extends SugarRecord<WeatherForecastList> {
         this.sys = sys;
     }
 
-    public Date getDtTxt() {
+    public String getDtTxt() {
         return dtTxt;
     }
 
-    public void setDtTxt(Date dtTxt) {
+    public void setDtTxt(String dtTxt) {
         this.dtTxt = dtTxt;
     }
 
@@ -104,7 +102,7 @@ public class WeatherForecastList extends SugarRecord<WeatherForecastList> {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class WeatherForecastList {\n");
+        sb.append("class WeatherForecast {\n");
 
         sb.append("    dt: ").append(toIndentedString(dt)).append("\n");
         sb.append("    main: ").append(toIndentedString(main)).append("\n");

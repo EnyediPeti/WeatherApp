@@ -1,6 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
 
-</android.support.constraint.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/reportCity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="@string/city" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/reportMinTemp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="@string/minimum_temperature" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/reportMaxTemp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="@string/maximum_temperature" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/title_weather_condition" />
+
+        <Spinner
+            android:id="@+id/reportWeatherConditionSpinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <Button
+            android:id="@+id/reportCancelButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/cancel" />
+
+        <Button
+            android:id="@+id/reportSaveButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/save" />
+
+    </LinearLayout>
+
+</LinearLayout>

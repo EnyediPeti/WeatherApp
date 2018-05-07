@@ -2,7 +2,6 @@ package hu.peter.enyedi.weatherapp.network.api;
 
 import hu.peter.enyedi.weatherapp.network.model.City;
 import hu.peter.enyedi.weatherapp.network.model.Weather;
-import hu.peter.enyedi.weatherapp.network.model.WeatherList;
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.DELETE;
@@ -19,13 +18,11 @@ public interface ForecastApi {
      *
      * @param q     The name of the city that you want the weather forecast of and &#39;,&#39; and the country code of the city
      * @param appid The application id to use the api call
-     * @return Call<WeatherList>
+     * @return Call<Weather>
      */
 
-    @GET("")
-    Call<WeatherList> getForecast(
-            @Query("q") String q, @Query("appid") String appid
-    );
+    @GET("forecast")
+    Call<Weather> getForecast(@Query("q") String q, @Query("units") String units, @Query("appid") String appid);
 
 
     /**
@@ -37,9 +34,7 @@ public interface ForecastApi {
      */
 
     @PUT("")
-    Call<Void> updateForecast(
-            @Query("weatherId") Integer weatherId, @Body Weather body
-    );
+    Call<Void> updateForecast(@Query("weatherId") Integer weatherId, @Body Weather body);
 
 
     /**
@@ -51,9 +46,7 @@ public interface ForecastApi {
      */
 
     @POST("")
-    Call<Void> createCity(
-            @Body City body
-    );
+    Call<Void> createCity(@Body City body);
 
 
     /**
@@ -65,9 +58,7 @@ public interface ForecastApi {
      */
 
     @DELETE("")
-    Call<Void> deleteCity(
-            @Path("cityName") String cityName
-    );
+    Call<Void> deleteCity(@Path("cityName") String cityName);
 
 
 }

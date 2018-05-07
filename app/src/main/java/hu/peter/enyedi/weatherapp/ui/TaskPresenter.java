@@ -1,9 +1,8 @@
-package hu.peter.enyedi.weatherapp;
+package hu.peter.enyedi.weatherapp.ui;
 
 import hu.axolotl.tasklib.InlineTaskListener;
 import hu.axolotl.tasklib.android.TaskEngineHolder;
 import hu.axolotl.tasklib.base.BaseTask;
-import hu.peter.enyedi.weatherapp.ui.Presenter;
 
 public class TaskPresenter<S> extends Presenter<S> {
 

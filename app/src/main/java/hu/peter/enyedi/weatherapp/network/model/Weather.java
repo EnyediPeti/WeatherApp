@@ -1,18 +1,28 @@
 package hu.peter.enyedi.weatherapp.network.model;
 
 import com.google.gson.annotations.SerializedName;
-import com.orm.SugarRecord;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Weather extends SugarRecord<Weather> {
+public class Weather /*extends RealmObject*/ {
+
+    @SerializedName("cod")
+    private String code = null;
+    @SerializedName("message")
+    private Double message = null;
+    @SerializedName("city")
+    private City city = null;
+    @SerializedName("cnt")
+    private Integer cnt = null;
+    @SerializedName("list")
+    private List<WeatherForecast> list = new ArrayList<WeatherForecast>();
 
     public Weather() {
 
     }
 
-    public Weather(String code, Integer message, WeatherCity city, Integer cnt, List<WeatherForecastList> list) {
+    public Weather(String code, Double message, City city, Integer cnt, List<WeatherForecast> list) {
         this.code = code;
         this.message = message;
         this.city = city;
@@ -20,22 +30,13 @@ public class Weather extends SugarRecord<Weather> {
         this.list = list;
     }
 
-    @SerializedName("code")
-
-    private String code = null;
-
-    @SerializedName("message")
-    private Integer message = null;
-
-    @SerializedName("city")
-    private WeatherCity city = null;
-
-    @SerializedName("cnt")
-    private Integer cnt = null;
-
-    @SerializedName("list")
-    private List<WeatherForecastList> list = new ArrayList<WeatherForecastList>();
-
+   /* public Weather(final WeatherRealm weatherRealm) {
+        code = weatherRealm.getCode();
+        message = weatherRealm.getMessage();
+        city = weatherRealm.getCity();
+        cnt = weatherRealm.getCnt();
+        list.addAll(weatherRealm.getList());
+    }*/
 
     public String getCode() {
         return code;
@@ -45,19 +46,19 @@ public class Weather extends SugarRecord<Weather> {
         this.code = code;
     }
 
-    public Integer getMessage() {
+    public Double getMessage() {
         return message;
     }
 
-    public void setMessage(Integer message) {
+    public void setMessage(Double message) {
         this.message = message;
     }
 
-    public WeatherCity getCity() {
+    public City getCity() {
         return city;
     }
 
-    public void setCity(WeatherCity city) {
+    public void setCity(City city) {
         this.city = city;
     }
 
@@ -69,11 +70,11 @@ public class Weather extends SugarRecord<Weather> {
         this.cnt = cnt;
     }
 
-    public List<WeatherForecastList> getList() {
+    public List<WeatherForecast> getList() {
         return list;
     }
 
-    public void setList(List<WeatherForecastList> list) {
+    public void setList(List<WeatherForecast> list) {
         this.list = list;
     }
 

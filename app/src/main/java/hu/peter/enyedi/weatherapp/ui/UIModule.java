@@ -1,30 +1,19 @@
 package hu.peter.enyedi.weatherapp.ui;
 
+import android.app.Application;
 import android.content.Context;
 
 import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
-import hu.peter.enyedi.weatherapp.ui.list.WeatherListPresenter;
 
 @Module
-public class UIModule {
-    private Context context;
+public abstract class UIModule {
 
-    public UIModule(Context context) {
-        this.context = context;
-    }
-
-    @Provides
-    public Context provideContext() {
-        return context;
-    }
-
-    @Provides
     @Singleton
-    public WeatherListPresenter provideWeatherListPresenter() {
-        return new WeatherListPresenter();
+    @Provides
+    static Context provideApplicationContext(final Application application) {
+        return application.getApplicationContext();
     }
-
 }

@@ -1,9 +1,8 @@
 package hu.peter.enyedi.weatherapp.network.model;
 
 import com.google.gson.annotations.SerializedName;
-import com.orm.SugarRecord;
 
-public class WeatherData extends SugarRecord<WeatherData> {
+public class WeatherData /*extends RealmObject*/ {
 
     @SerializedName("id")
     private Integer id = null;
